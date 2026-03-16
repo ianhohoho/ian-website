@@ -9,20 +9,20 @@
 - The user will hard-refresh (`Cmd+Shift+R`) to see changes
 
 ## Before Committing
-- The pre-commit hook handles this automatically, but if committing manually:
-  1. `pnpm exec tsc --noEmit` — must pass
-  2. `pnpm build` — must pass
+- The pre-commit hook (`.hooks/pre-commit`) runs automatically on every commit:
+  1. Bumps the patch version in `package.json` (auto-stages the change)
+  2. `pnpm exec tsc --noEmit` — must pass
+  3. `pnpm build` — must pass
 - Never skip hooks (`--no-verify`)
+- Do NOT manually bump the version — the hook does it automatically
 
 ## Pushing to GitHub
-- Remote often has changes from Vercel's version-bump workflow
-- If `git push` is rejected, always run `git pull --rebase origin main` first, then push again
+- If `git push` is rejected, run `git pull --rebase origin main` first, then push again
 - Vercel auto-deploys on push to `main` — no manual deploy step needed
 
 ## Committing
 - Use descriptive commit messages
 - Always include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>` when Claude writes the code
-- Bump the version in `package.json` when the user asks to deploy
 
 ## Tools & Commands
 - Package manager: `pnpm` (never npm or yarn)

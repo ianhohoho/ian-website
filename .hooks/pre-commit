@@ -1,6 +1,17 @@
 #!/bin/sh
 echo "Running pre-commit checks..."
 
+echo "→ Bumping patch version..."
+NEW_VERSION=$(node -p "
+  const pkg = require('./package.json');
+  const parts = pkg.version.split('.');
+  parts[2] = parseInt(parts[2]) + 1;
+  parts.join('.');
+")
+npm version "$NEW_VERSION" --no-git-tag-version > /dev/null 2>&1
+git add package.json
+echo "  Version → $NEW_VERSION"
+
 echo "→ Type checking..."
 pnpm exec tsc --noEmit || {
   echo "✗ Type check failed. Fix errors before committing."
