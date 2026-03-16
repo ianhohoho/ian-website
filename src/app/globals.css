@@ -27,25 +27,37 @@
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    /* Near-black */
+    --background: 0 0% 3%;
+    /* Off-White #F5F5F5 */
+    --foreground: 0 0% 96%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 50%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 96%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 96%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+
+    /* Baby Blue #89CFF0 */
+    --primary: 199 77% 74%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
+    /* Baby Blue accent */
+    --accent: 199 77% 74%;
+    --accent-foreground: 0 0% 3%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --ring: 0 0% 83.1%;
+    --ring: 199 77% 74%;
+
+    /* Electric Cyan #00D4FF */
+    --glow: 190 100% 50%;
+    /* Gradient: Baby Blue → Electric Cyan */
+    --gradient-from: 199 77% 74%;
+    --gradient-to: 190 100% 50%;
   }
 }
 
@@ -55,5 +67,70 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Keyframes */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px hsl(var(--glow) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--glow) / 0.5);
+  }
+}
+
+@keyframes terminal-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(
+      circle,
+      hsl(var(--muted-foreground) / 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-to))
+    );
+  }
+
+  .card-glow {
+    @apply transition-shadow duration-300;
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 16px hsl(var(--glow) / 0.15),
+      0 0 4px hsl(var(--glow) / 0.1);
+  }
+
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 6px hsl(var(--glow) / 0.5));
   }
 }

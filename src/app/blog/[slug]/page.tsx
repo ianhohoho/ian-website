@@ -33,7 +33,7 @@ export default async function BlogPostPage({ params }: Props) {
     <div className="mx-auto max-w-3xl px-6 py-16">
       <Link
         href="/blog"
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to blog
@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-secondary px-3 py-1 text-xs text-secondary-foreground"
+                  className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
                 >
                   {tag}
                 </span>
@@ -60,7 +60,7 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div
-          className="prose prose-invert mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-foreground prose-a:underline prose-strong:text-foreground"
+          className="prose prose-invert mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-a:underline prose-strong:text-foreground prose-code:text-primary"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>

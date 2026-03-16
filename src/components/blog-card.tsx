@@ -12,10 +12,10 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block rounded-lg border border-border p-6 transition-colors hover:border-foreground/20 hover:bg-accent/50"
+      className="group block rounded-lg border border-border p-6 transition-colors hover:border-primary/30 card-glow"
     >
       <time className="text-sm text-muted-foreground">{post.date}</time>
-      <h3 className="mt-2 text-lg font-semibold group-hover:underline">
+      <h3 className="mt-2 text-lg font-semibold group-hover:text-primary">
         {post.title}
       </h3>
       <p className="mt-2 text-sm text-muted-foreground">{post.description}</p>
@@ -24,7 +24,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-secondary px-3 py-1 text-xs text-secondary-foreground"
+              className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
             >
               {tag}
             </span>

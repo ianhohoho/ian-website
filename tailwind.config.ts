@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-mono)", "JetBrains Mono", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -18,6 +18,7 @@ const config: Config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        glow: "hsl(var(--glow))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -58,6 +59,25 @@ const config: Config = {
             maxWidth: "none",
           },
         },
+      },
+      keyframes: {
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "terminal-blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 8px hsl(var(--glow) / 0.3)" },
+          "50%": { boxShadow: "0 0 20px hsl(var(--glow) / 0.5)" },
+        },
+      },
+      animation: {
+        "fade-in-up": "fade-in-up 0.5s ease-out both",
+        "terminal-blink": "terminal-blink 1s step-end infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
       },
     },
   },
