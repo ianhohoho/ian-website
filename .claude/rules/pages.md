@@ -18,8 +18,8 @@ paths:
 ## Specific Pages
 - **Home** (`page.tsx`): Hero component only, no other content
 - **About** (`about/page.tsx`): Fun facts cards (hiking, badminton, volunteering, writing) — edit the `funFacts` array to update
-- **Resume** (`resume/page.tsx`): Real experience (GovTech, Grab, Point72), education (Columbia, Oxford). Timeline uses `border-primary/30` left border, skill pills use cyan style
-- **Portfolio** (`portfolio/page.tsx`): Staggered project and article cards
+- **Resume** (`resume/page.tsx`): Data-driven from `content/resume/` markdown files via `getResumeData()`. Async Server Component. Experience bullets rendered via `dangerouslySetInnerHTML` with `.resume-bullets` CSS. Timeline uses `border-primary/30` left border, skill pills use cyan style
+- **Portfolio** (`portfolio/page.tsx`): Data-driven from `content/projects/` and `content/articles/` markdown files via `getAllProjects()` / `getAllArticles()`. Staggered project and article cards
 - **Blog** (`blog/page.tsx`): Staggered blog cards
 - **Blog Post** (`blog/[slug]/page.tsx`): Prose styles — `prose-a:text-primary prose-code:text-primary`
 - **Contact** (`contact/page.tsx`): Staggered contact cards with icon + glow hover

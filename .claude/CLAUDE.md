@@ -8,7 +8,7 @@ Personal portfolio/blog website for a data scientist. Purely frontend, hosted on
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 3 + shadcn/ui CSS variable design tokens
 - **Animations**: Motion (Framer Motion v11+) — page transitions, scroll reveals, typing effects
-- **Blog**: Local `.md` files in `content/blog/`, parsed with `gray-matter` + `remark`/`remark-html`
+- **Content**: All content (blog, projects, articles, resume) lives in `content/` as `.md` files, parsed with `gray-matter` + `remark`/`remark-html`
 - **Icons**: Lucide React
 - **Fonts**: JetBrains Mono (monospace everywhere, loaded via `next/font/google`)
 - **Package Manager**: pnpm
@@ -40,9 +40,16 @@ src/
     project-card.tsx    # Project card with glow hover, styled action buttons
     article-card.tsx    # Article card with glow hover
     blog-card.tsx       # Blog post card with glow hover, cyan tag pills
-  data/               # Static data files (projects.ts, articles.ts — articles from Medium)
-  lib/                # Utilities (blog parser, cn helper)
-content/blog/         # Markdown blog posts with frontmatter
+  lib/                # Utilities (blog.ts, content.ts parsers, cn helper)
+content/
+  blog/               # Markdown blog posts with frontmatter
+  projects/           # One .md per project (frontmatter + description body)
+  articles/           # One .md per article (frontmatter only)
+  resume/
+    summary.md        # Summary paragraph as body
+    experience/       # One .md per role (frontmatter + bullet list body)
+    education/        # One .md per degree (frontmatter only)
+    skills.md         # Skill categories as YAML arrays in frontmatter
 public/images/        # Static images (dp.jpg profile photo)
 .hooks/               # Git hooks (committed to repo)
 .claude/              # Claude Code project config, rules, and skills
@@ -73,5 +80,5 @@ A pre-commit hook in `.hooks/pre-commit` bumps the patch version, runs `tsc --no
 - **Glow / Highlight**: Electric Cyan `#00D4FF` (`190 100% 50%`)
 - **Text**: Off-White `#F5F5F5` (`0 0% 96%`)
 - **CSS variables**: Defined in `globals.css` under `.dark` selector
-- **Custom utilities**: `.bg-grid-pattern`, `.text-gradient`, `.card-glow`, `.drop-shadow-glow`
+- **Custom utilities**: `.bg-grid-pattern`, `.text-gradient`, `.card-glow`, `.drop-shadow-glow`, `.resume-bullets`
 - **Animations**: `fade-in-up`, `glow-pulse`, `terminal-blink` keyframes
