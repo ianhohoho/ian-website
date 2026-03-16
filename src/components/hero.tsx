@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -27,14 +28,17 @@ export function Hero() {
       animate="show"
       className="flex flex-col items-center gap-8 py-20 text-center md:py-28"
     >
-      {/* Logo mark */}
+      {/* Profile photo */}
       <motion.div variants={fadeUp}>
-        <div className="flex h-32 w-32 items-center justify-center rounded-full border-2 border-primary/30 bg-primary/5 animate-glow-pulse">
-          <span className="text-4xl font-bold">
-            <span className="text-muted-foreground">&lt;</span>
-            <span className="text-gradient">i</span>
-            <span className="text-muted-foreground">/&gt;</span>
-          </span>
+        <div className="h-44 w-44 overflow-hidden rounded-full border-2 border-primary/30 animate-glow-pulse">
+          <Image
+            src="/images/dp.jpg"
+            alt="Ian Ho"
+            width={256}
+            height={256}
+            className="h-full w-full object-cover scale-125"
+            priority
+          />
         </div>
       </motion.div>
 
@@ -55,8 +59,6 @@ export function Hero() {
               "Data Scientist",
               "ML Engineer",
               "AI Engineer",
-              "Data Engineer",
-              "Problem Solver",
             ]}
           />
         </motion.p>

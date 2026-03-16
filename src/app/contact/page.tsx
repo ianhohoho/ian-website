@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 
 export const metadata: Metadata = {
@@ -9,27 +9,21 @@ export const metadata: Metadata = {
 const contactLinks = [
   {
     label: "Email",
-    href: "mailto:hello@example.com",
-    description: "hello@example.com",
+    href: "mailto:ianhojy@gmail.com",
+    description: "ianhojy@gmail.com",
     icon: Mail,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/ianho",
-    description: "linkedin.com/in/ianho",
+    href: "https://linkedin.com/in/ianhojy",
+    description: "linkedin.com/in/ianhojy",
     icon: Linkedin,
   },
   {
     label: "GitHub",
-    href: "https://github.com/ianho",
-    description: "github.com/ianho",
+    href: "https://github.com/ianhohoho",
+    description: "github.com/ianhohoho",
     icon: Github,
-  },
-  {
-    label: "Twitter / X",
-    href: "https://x.com/ianho",
-    description: "@ianho",
-    icon: Twitter,
   },
 ];
 
