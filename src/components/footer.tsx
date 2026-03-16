@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import packageJson from "../../package.json";
 
 export function Footer() {
   return (
@@ -6,6 +7,8 @@ export function Footer() {
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 sm:flex-row sm:justify-between">
         <p className="text-sm text-muted-foreground">
           <span className="text-primary">$</span> &copy; {new Date().getFullYear()} Ian Ho
+          <span className="mx-2 text-border">|</span>
+          <span className="text-primary">v{packageJson.version}</span>
         </p>
         <div className="flex items-center gap-4">
           <a
