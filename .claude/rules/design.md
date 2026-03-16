@@ -25,6 +25,10 @@
 - Gradient text (`.text-gradient`) for the hero name and 404 heading
 - Terminal-style prefixes on page headings (`>`, `#`, `$`)
 
+## Favicon
+- `src/app/icon.svg` — circular SVG with black background, subtle baby blue ring, `<i/>` logo
+- Next.js auto-detects `icon.svg` in the app directory
+
 ## Navigation
 - Logo: `<i/>` mark — angle brackets in muted color, "i" in gradient, glow on hover
 - Active link indicator: motion `layoutId` underline that slides between links

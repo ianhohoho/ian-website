@@ -28,6 +28,7 @@ src/
     blog/page.tsx       # Blog listing (staggered card animations)
     blog/[slug]/page.tsx  # Individual blog post
     contact/page.tsx    # Contact page (animated cards)
+    icon.svg            # Favicon — circular <i/> logo (black bg, baby blue gradient)
     not-found.tsx       # Custom 404 (gradient text, terminal style)
   components/
     navbar.tsx          # <i/> logo mark, motion layoutId indicator, AnimatePresence mobile menu
