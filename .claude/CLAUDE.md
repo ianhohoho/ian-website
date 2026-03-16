@@ -31,7 +31,7 @@ src/
     not-found.tsx       # Custom 404 (gradient text, terminal style)
   components/
     navbar.tsx          # <i/> logo mark, motion layoutId indicator, AnimatePresence mobile menu
-    footer.tsx          # Terminal-style copyright, social icons with glow hover
+    footer.tsx          # Terminal-style copyright + version, social icons with glow hover
     hero.tsx            # Profile photo, gradient name, rotating TypingEffect, CTA buttons
     animate-in.tsx      # Scroll-triggered entrance (useInView + motion)
     page-transition.tsx # Fade-in-up motion wrapper
@@ -44,7 +44,8 @@ src/
 content/blog/         # Markdown blog posts with frontmatter
 public/images/        # Static images (dp.jpg profile photo)
 .hooks/               # Git hooks (committed to repo)
-.claude/              # Claude Code project config and rules
+.claude/              # Claude Code project config, rules, and skills
+  skills/remember/    # /remember slash command
 ```
 
 ## Commands
@@ -54,7 +55,7 @@ public/images/        # Static images (dp.jpg profile photo)
 - `lsof -ti:3000 | xargs kill 2>/dev/null; sleep 1; rm -rf .next && pnpm dev` — Full dev server restart
 
 ## Pre-commit Hook
-A pre-commit hook in `.hooks/pre-commit` runs `tsc --noEmit` and `pnpm build` before every commit.
+A pre-commit hook in `.hooks/pre-commit` bumps the patch version, runs `tsc --noEmit`, and `pnpm build` before every commit.
 - Git is configured with `core.hooksPath = .hooks`
 - After cloning, run: `git config core.hooksPath .hooks`
 

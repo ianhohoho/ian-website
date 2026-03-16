@@ -16,12 +16,17 @@ paths:
 - Tag/tech pills: `rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary`
 - Link hover color: `hover:text-primary` (not `hover:text-foreground`)
 
+## Footer
+- Imports version from `package.json` and displays inline: `$ © 2026 Ian Ho | v0.1.x`
+- Version number styled with `text-primary` (Baby Blue)
+- Social icons: GitHub, LinkedIn, Email — hover with `text-primary` and `drop-shadow-glow`
+
 ## Hero
 - Client component (`"use client"`) due to motion animations
-- Profile photo at `/images/dp.jpg` in a glowing circular frame
+- Profile photo at `/images/dp.jpg` in a glowing circular frame (`scale-125` zoom)
 - Name uses `.text-gradient`
 - Subtitle uses `<TypingEffect>` with rotating titles
-- CTA buttons: uniform outlined style, arrow appears and nudges on hover
+- CTA buttons: uniform outlined style, arrow always visible, nudges right on hover
 
 ## Navbar
 - Client component due to `usePathname` and `useState`
