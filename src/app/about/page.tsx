@@ -40,7 +40,7 @@ export default function AboutPage() {
           <AnimateIn key={i} delay={i * 0.1}>
             <div className="flex items-start gap-4 rounded-lg border border-border p-5 card-glow hover:border-primary/30">
               <fact.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              <p className="text-sm text-muted-foreground">{fact.text}</p>
+              <p className="text-sm text-foreground">{fact.text}</p>
             </div>
           </AnimateIn>
         ))}

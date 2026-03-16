@@ -6,6 +6,7 @@
 - **Glow (Electric Cyan)**: `#00D4FF` — CSS var `--glow: 190 100% 50%` — used for hover glows, highlights, gradients
 - **Foreground (Off-White)**: `#F5F5F5` — CSS var `--foreground: 0 0% 96%` — main text color
 - **Muted**: Dimmed grays for secondary text and borders
+- Key content text (hero cycling title, about me card descriptions, resume bullets) uses `text-foreground` (white), not `text-muted-foreground`
 - Never introduce new accent colors without user approval
 
 ## Typography

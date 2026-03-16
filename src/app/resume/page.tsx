@@ -55,7 +55,7 @@ export default async function ResumePage() {
                   {role.team && <> &mdash; {role.team}</>}
                 </p>
                 <div
-                  className="resume-bullets mt-3 text-sm text-muted-foreground"
+                  className="resume-bullets mt-3 text-sm text-foreground"
                   dangerouslySetInnerHTML={{ __html: role.bulletsHtml }}
                 />
               </div>

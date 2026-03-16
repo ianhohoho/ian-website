@@ -52,7 +52,7 @@ export function Hero() {
 
         <motion.p
           variants={fadeUp}
-          className="text-xl text-muted-foreground sm:text-2xl"
+          className="text-xl text-foreground sm:text-2xl"
         >
           <TypingEffect
             texts={[
@@ -63,14 +63,14 @@ export function Hero() {
           />
         </motion.p>
 
-        <motion.p
+        <motion.div
           variants={fadeUp}
-          className="mx-auto max-w-xl text-muted-foreground"
+          className="mx-auto max-w-xl space-y-6 text-muted-foreground"
         >
-          Lead Data Scientist & ML Engineer building production-grade ML
-          systems, LLM-powered platforms, and data infrastructure at scale.
-          Oxford & Columbia educated.
-        </motion.p>
+          <p>Lead Data Scientist &amp; ML Engineer with experience building production-grade ML systems, AI-powered solutions, and data infrastructure at scale.</p>
+          <p>Passionate about turning complex data problems into high-impact products.</p>
+          <p>Always looking to learn new things.</p>
+        </motion.div>
       </div>
 
       <motion.div

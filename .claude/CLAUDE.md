@@ -54,6 +54,7 @@ public/images/        # Static images (dp.jpg profile photo)
 .hooks/               # Git hooks (committed to repo)
 .claude/              # Claude Code project config, rules, and skills
   skills/remember/    # /remember slash command
+  skills/reload/      # /reload — restart dev server
 ```
 
 ## Commands
