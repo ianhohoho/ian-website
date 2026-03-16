@@ -35,4 +35,5 @@
 ## Pages
 - All page headings use terminal-prefix style: `<span className="text-primary">$</span> Title`
 - Prefixes: `>` for Resume/Contact, `#` for Portfolio/About, `$` for Blog/404
+- Section sub-headers (h2) use `text-primary` for baby blue color
 - Metadata exported via `export const metadata: Metadata = { ... }`

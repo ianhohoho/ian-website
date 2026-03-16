@@ -40,7 +40,7 @@ src/
     project-card.tsx    # Project card with glow hover, styled action buttons
     article-card.tsx    # Article card with glow hover
     blog-card.tsx       # Blog post card with glow hover, cyan tag pills
-  data/               # Static data files (projects.ts, articles.ts)
+  data/               # Static data files (projects.ts, articles.ts — articles from Medium)
   lib/                # Utilities (blog parser, cn helper)
 content/blog/         # Markdown blog posts with frontmatter
 public/images/        # Static images (dp.jpg profile photo)
