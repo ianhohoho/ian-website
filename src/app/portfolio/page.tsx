@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import { ProjectCard } from "@/components/project-card";
 import { ArticleCard } from "@/components/article-card";
 import { AnimateIn } from "@/components/animate-in";
-import { projects } from "@/data/projects";
-import { articles } from "@/data/articles";
+import { getAllProjects, getAllArticles } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Portfolio",
 };
 
 export default function PortfolioPage() {
+  const projects = getAllProjects();
+  const articles = getAllArticles();
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
       <h1 className="text-3xl font-bold tracking-tight">
