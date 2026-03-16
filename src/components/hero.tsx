@@ -67,9 +67,9 @@ export function Hero() {
           variants={fadeUp}
           className="mx-auto max-w-xl text-muted-foreground"
         >
-          I build data-driven solutions and turn complex datasets into
-          actionable insights. Passionate about machine learning, statistical
-          modeling, and making data accessible.
+          Lead Data Scientist & ML Engineer building production-grade ML
+          systems, LLM-powered platforms, and data infrastructure at scale.
+          Oxford & Columbia educated.
         </motion.p>
       </div>
 

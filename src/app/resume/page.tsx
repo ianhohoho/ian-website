@@ -25,12 +25,12 @@ export default function ResumePage() {
       {/* Summary */}
       <AnimateIn>
         <section className="mt-12">
-          <h2 className="text-xl font-semibold">Summary</h2>
+          <h2 className="text-xl font-semibold text-primary">Summary</h2>
           <p className="mt-4 text-muted-foreground">
-            Data Scientist with experience in machine learning, statistical
-            modeling, and data engineering. Passionate about building data-driven
-            products and transforming complex datasets into actionable business
-            insights.
+            Lead Data Scientist & ML Engineer with experience building
+            production-grade ML systems, LLM-powered platforms, and data
+            infrastructure at scale. Oxford & Columbia educated, passionate about
+            turning complex data problems into high-impact products.
           </p>
         </section>
       </AnimateIn>
@@ -38,28 +38,52 @@ export default function ResumePage() {
       {/* Experience */}
       <AnimateIn delay={0.1}>
         <section className="mt-12">
-          <h2 className="text-xl font-semibold">Experience</h2>
+          <h2 className="text-xl font-semibold text-primary">Experience</h2>
           <div className="mt-6 space-y-8">
             <div className="border-l-2 border-primary/30 pl-6">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="font-medium">Senior Data Scientist</h3>
+                <h3 className="font-medium">
+                  Lead Data Scientist / Head of DS & AI
+                </h3>
                 <span className="text-sm text-muted-foreground">
-                  2023 &mdash; Present
+                  Jan 2023 &mdash; Present
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground">Company Name</p>
+              <p className="text-sm text-muted-foreground">
+                GovTech &mdash; Singpass
+              </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  &bull; Led ML model development for customer churn prediction,
-                  improving retention by 15%
+                  &bull; Founded & scaled two cross-functional DS/ML/AI teams
+                  across Trust & Safety and Data Platform
                 </li>
                 <li>
-                  &bull; Built end-to-end data pipelines processing 10M+ records
-                  daily
+                  &bull; Architectured production-grade ML fraud detection
+                  engine achieving 95% precision at 300 QPS
                 </li>
                 <li>
-                  &bull; Mentored junior data scientists and established team best
-                  practices
+                  &bull; Led data, metrics & experiment strategy for 8
+                  nationwide digital products with A/B testing frameworks
+                </li>
+                <li>
+                  &bull; Built enterprise Agentic RAG solution automating
+                  hundreds of queries at precision@k of 96%
+                </li>
+                <li>
+                  &bull; Built LLM-powered analytics platform for
+                  natural-language querying across hundreds of datasets
+                </li>
+                <li>
+                  &bull; Built & scaled Data Platform from 0 &rarr; 1: streaming
+                  architecture, ML feature store, experimentation & analytics
+                </li>
+                <li>
+                  &bull; Pioneered multi-step NLP clustering algorithm for
+                  unsupervised detection of issue clusters in unstructured text
+                </li>
+                <li>
+                  &bull; Developed low-latency multi-objective route optimisation
+                  by custom-rewriting Google&apos;s OR-tools
                 </li>
               </ul>
             </div>
@@ -68,44 +92,48 @@ export default function ResumePage() {
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="font-medium">Data Scientist</h3>
                 <span className="text-sm text-muted-foreground">
-                  2021 &mdash; 2023
+                  Jan 2022 &mdash; Jan 2023
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground">Previous Company</p>
+              <p className="text-sm text-muted-foreground">Grab</p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  &bull; Developed NLP models for sentiment analysis across
-                  product reviews
+                  &bull; Built LTV Prediction Model using neural networks &
+                  custom loss functions, deployed across Grab ecosystem for ROI
+                  forecasting
                 </li>
                 <li>
-                  &bull; Created interactive dashboards and automated reporting
-                  systems
+                  &bull; Architectured Grab&apos;s first automated Impact
+                  Estimation platform using pseudo-experimentation for causal
+                  analysis without A/B tests
                 </li>
                 <li>
-                  &bull; Collaborated with engineering to deploy models to
-                  production
+                  &bull; Awarded Grab Way award for outstanding performance
                 </li>
               </ul>
             </div>
 
             <div className="border-l-2 border-primary/30 pl-6">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="font-medium">Data Analyst</h3>
+                <h3 className="font-medium">
+                  Data Scientist Graduate Researcher
+                </h3>
                 <span className="text-sm text-muted-foreground">
-                  2019 &mdash; 2021
+                  Aug 2019 &mdash; Apr 2020
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground">First Company</p>
+              <p className="text-sm text-muted-foreground">
+                Point72 &mdash; Commodities
+              </p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  &bull; Performed exploratory data analysis and statistical
-                  testing
+                  &bull; Built Vector Auto-Regressive models for oil price
+                  prediction with Bayesian optimisation, achieving 18% error
+                  reduction from academic benchmark
                 </li>
                 <li>
-                  &bull; Built SQL queries and data models for business reporting
-                </li>
-                <li>
-                  &bull; Automated weekly reports saving 10+ hours per week
+                  &bull; Developed proprietary Energy Demand Index based on
+                  hundreds of underlying indicators
                 </li>
               </ul>
             </div>
@@ -116,21 +144,40 @@ export default function ResumePage() {
       {/* Education */}
       <AnimateIn delay={0.2}>
         <section className="mt-12">
-          <h2 className="text-xl font-semibold">Education</h2>
+          <h2 className="text-xl font-semibold text-primary">Education</h2>
           <div className="mt-6 space-y-6">
             <div className="border-l-2 border-primary/30 pl-6">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="font-medium">M.S. in Data Science</h3>
-                <span className="text-sm text-muted-foreground">2019</span>
+                <h3 className="font-medium">
+                  M.S. Business Analytics / Data Science
+                </h3>
+                <span className="text-sm text-muted-foreground">
+                  2019 &mdash; 2020
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground">University Name</p>
+              <p className="text-sm text-muted-foreground">
+                Columbia Engineering, Columbia University
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                GPA 4.0/4.0 &mdash; Awarded Graduate Fellowship for top
+                performance
+              </p>
             </div>
             <div className="border-l-2 border-primary/30 pl-6">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="font-medium">B.S. in Computer Science</h3>
-                <span className="text-sm text-muted-foreground">2017</span>
+                <h3 className="font-medium">
+                  B.A. Politics, Philosophy & Economics
+                </h3>
+                <span className="text-sm text-muted-foreground">
+                  2016 &mdash; 2019
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground">University Name</p>
+              <p className="text-sm text-muted-foreground">
+                University of Oxford
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                1st Class Honours &mdash; Top in College
+              </p>
             </div>
           </div>
         </section>
@@ -139,19 +186,21 @@ export default function ResumePage() {
       {/* Skills */}
       <AnimateIn delay={0.3}>
         <section className="mt-12">
-          <h2 className="text-xl font-semibold">Skills</h2>
+          <h2 className="text-xl font-semibold text-primary">Skills</h2>
           <div className="mt-6 space-y-4">
             <div>
-              <h3 className="text-sm font-medium">Languages & Tools</h3>
+              <h3 className="text-sm font-medium">Languages & Infrastructure</h3>
               <div className="mt-2 flex flex-wrap gap-2">
                 {[
                   "Python",
                   "SQL",
-                  "R",
-                  "TypeScript",
-                  "Git",
-                  "Docker",
+                  "Spark",
                   "AWS",
+                  "Azure",
+                  "Docker",
+                  "CI/CD & IaC",
+                  "REST",
+                  "gRPC",
                 ].map((skill) => (
                   <span
                     key={skill}
@@ -163,16 +212,16 @@ export default function ResumePage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-medium">ML & Data</h3>
+              <h3 className="text-sm font-medium">ML & AI</h3>
               <div className="mt-2 flex flex-wrap gap-2">
                 {[
-                  "Scikit-learn",
-                  "PyTorch",
                   "TensorFlow",
-                  "Pandas",
-                  "Spark",
+                  "MLOps",
+                  "LLMs",
+                  "Langchain",
+                  "RAG",
                   "Airflow",
-                  "dbt",
+                  "Vector Databases",
                 ].map((skill) => (
                   <span
                     key={skill}
@@ -184,33 +233,23 @@ export default function ResumePage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm font-medium">Visualization</h3>
+              <h3 className="text-sm font-medium">Data & Observability</h3>
               <div className="mt-2 flex flex-wrap gap-2">
-                {["Plotly", "Matplotlib", "Tableau", "Streamlit"].map(
-                  (skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
-                    >
-                      {skill}
-                    </span>
-                  )
-                )}
+                {[
+                  "Snowflake",
+                  "Kafka",
+                  "Datadog (OTEL)",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
-        </section>
-      </AnimateIn>
-
-      {/* Certifications */}
-      <AnimateIn delay={0.4}>
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold">Certifications</h2>
-          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>&bull; AWS Certified Machine Learning &mdash; Specialty</li>
-            <li>&bull; Google Professional Data Engineer</li>
-            <li>&bull; TensorFlow Developer Certificate</li>
-          </ul>
         </section>
       </AnimateIn>
     </div>

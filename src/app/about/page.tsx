@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lightbulb, Code2, Coffee, Gamepad2 } from "lucide-react";
+import { Mountain, Heart, PenLine, Trophy } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 
 export const metadata: Metadata = {
@@ -8,20 +8,20 @@ export const metadata: Metadata = {
 
 const funFacts = [
   {
-    icon: Code2,
-    text: "I wrote my first line of code in middle school and never looked back.",
+    icon: Mountain,
+    text: "I run, hike, travel, and hit the slopes for skiing & snowboarding whenever I can get the adrenaline fix.",
   },
   {
-    icon: Coffee,
-    text: "Fueled by an unreasonable amount of coffee and late-night debugging sessions.",
+    icon: Trophy,
+    text: "Badminton is my go that to sport — always up for a game.",
   },
   {
-    icon: Gamepad2,
-    text: "When I'm not training models, you'll find me playing strategy games or hiking.",
+    icon: Heart,
+    text: "I volunteer for Access Singapore — a strong believer in education as a force for social mobility.",
   },
   {
-    icon: Lightbulb,
-    text: "I believe the best insights come from asking the right questions, not just having the right data.",
+    icon: PenLine,
+    text: "I love writing and conducting sharings on technical concepts — turning complex ideas into something anyone can follow.",
   },
 ];
 

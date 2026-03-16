@@ -18,7 +18,7 @@ export default function PortfolioPage() {
 
       {/* Projects */}
       <section className="mt-12">
-        <h2 className="text-xl font-semibold">Things I&apos;ve Built</h2>
+        <h2 className="text-xl font-semibold text-primary">Things I&apos;ve Built</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {projects.map((project, i) => (
             <AnimateIn key={project.title} delay={i * 0.1}>
@@ -30,7 +30,7 @@ export default function PortfolioPage() {
 
       {/* Articles */}
       <section className="mt-16">
-        <h2 className="text-xl font-semibold">Articles I&apos;ve Written</h2>
+        <h2 className="text-xl font-semibold text-primary">Articles I&apos;ve Written</h2>
         <div className="mt-6 space-y-4">
           {articles.map((article, i) => (
             <AnimateIn key={article.title} delay={i * 0.1}>
