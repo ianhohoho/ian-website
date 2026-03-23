@@ -38,15 +38,22 @@ export default function PortfolioPage() {
                 <AnimateIn key={project.title} delay={i * 0.1}>
                   <div className="group overflow-hidden rounded-lg border border-border card-glow hover:border-primary/30">
                     {/* Terminal header */}
-                    <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-4 py-2.5">
-                      <div className="flex gap-1.5">
-                        <span className="h-3 w-3 rounded-full bg-red-500/60" />
-                        <span className="h-3 w-3 rounded-full bg-yellow-500/60" />
-                        <span className="h-3 w-3 rounded-full bg-green-500/60" />
+                    <div className="flex items-center justify-between border-b border-border bg-muted/50 px-4 py-2.5">
+                      <div className="flex items-center gap-2">
+                        <div className="flex gap-1.5">
+                          <span className="h-3 w-3 rounded-full bg-red-500/60" />
+                          <span className="h-3 w-3 rounded-full bg-yellow-500/60" />
+                          <span className="h-3 w-3 rounded-full bg-green-500/60" />
+                        </div>
+                        <span className="ml-2 text-xs text-muted-foreground">
+                          ~/projects/{project.title.toLowerCase().replace(/\s+/g, "-")}
+                        </span>
                       </div>
-                      <span className="ml-2 text-xs text-muted-foreground">
-                        ~/projects/{project.title.toLowerCase().replace(/\s+/g, "-")}
-                      </span>
+                      {project.wip && (
+                        <span className="rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2.5 py-0.5 text-xs font-medium text-yellow-400">
+                          WIP
+                        </span>
+                      )}
                     </div>
                     {/* Content */}
                     <div className="p-6">

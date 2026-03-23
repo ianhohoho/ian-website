@@ -6,6 +6,7 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  wip?: boolean;
 }
 
 export function ProjectCard({ project, showTechStack = true }: { project: Project; showTechStack?: boolean }) {

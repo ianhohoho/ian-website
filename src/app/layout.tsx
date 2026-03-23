@@ -8,7 +8,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: {
-    default: "Ian Ho — Data Scientist",
+    default: "Ian Ho — Lead Data Scientist",
     template: "%s | Ian Ho",
   },
   description:

@@ -25,6 +25,7 @@ export function getAllProjects(): Project[] {
       techStack: data.techStack as string[],
       githubUrl: data.githubUrl as string | undefined,
       liveUrl: data.liveUrl as string | undefined,
+      wip: (data.wip as boolean) || false,
       order: (data.order as number) || 0,
     };
   });
