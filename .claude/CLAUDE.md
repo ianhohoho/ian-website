@@ -58,6 +58,7 @@ public/images/        # Static images (dp.jpg profile photo)
 .claude/              # Claude Code project config, rules, and skills
   skills/remember/    # /remember slash command
   skills/reload/      # /reload — restart dev server
+  skills/stop/        # /stop — kill dev server
 ```
 
 ## Commands

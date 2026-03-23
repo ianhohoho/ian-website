@@ -18,7 +18,7 @@ paths:
 - `ProjectCard` supports `wip?: boolean` — renders yellow WIP badge; `showTechStack?: boolean` — hides tech pills when false
 
 ## Footer
-- Imports version from `package.json` and displays inline: `$ © 2026 Ian Ho | v0.1.x`
+- Imports version from `package.json` and displays inline: `$ © 2026 Ian Ho | v{version}`
 - Version number styled with `text-primary` (Baby Blue)
 - Social icons: GitHub, LinkedIn, Email — hover with `text-primary` and `drop-shadow-glow`
 
