@@ -6,7 +6,7 @@ paths:
 # Component Rules
 
 ## Animation Components
-- `animate-in.tsx` — Wrap sections in `<AnimateIn>` for scroll-triggered entrance. Accepts `delay` prop for staggering.
+- `animate-in.tsx` — Wrap sections in `<AnimateIn>` for scroll-triggered entrance. Accepts `delay` and `className` props. Use `className="h-full"` in grids for equal-height cards.
 - `page-transition.tsx` — Used by `template.tsx`, not called directly.
 - `typing-effect.tsx` — Accepts `texts: string[]` array, cycles through them with type/delete animation. Always shows blinking cursor.
 
@@ -26,7 +26,14 @@ paths:
 - Profile photo at `/images/dp.jpg` in a glowing circular frame (`scale-125` zoom)
 - Name uses `.text-gradient`
 - Subtitle uses `<TypingEffect>` with rotating titles
+- Below subtitle: one-liner summary, then 2x2 grid of info cards with emoji icons
 - CTA buttons: uniform outlined style, arrow always visible, nudges right on hover
+
+## Portfolio Nav
+- `portfolio-nav.tsx` — Sticky side nav for portfolio page sections
+- Client component with `IntersectionObserver` for scroll-aware active section highlighting
+- Hidden on mobile (`hidden lg:block`), sticky at `top-32`
+- Active section: `border-primary text-primary` left border
 
 ## Navbar
 - Client component due to `usePathname` and `useState`
