@@ -40,7 +40,7 @@ src/
     project-card.tsx    # Project card with glow hover, styled action buttons, optional showTechStack prop
     article-card.tsx    # Article card with glow hover
     blog-card.tsx       # Blog post card with glow hover, cyan tag pills
-    portfolio-nav.tsx   # Sticky side nav for portfolio page (scroll-aware section highlighting)
+    side-nav.tsx        # Reusable sticky side nav (scroll-aware section highlighting, used on portfolio + resume)
   lib/                # Utilities (blog.ts, content.ts parsers, cn helper)
 content/
   blog/               # Markdown blog posts with frontmatter
@@ -52,6 +52,7 @@ content/
     experience/       # One .md per role (frontmatter + bullet list body)
     education/        # One .md per degree (frontmatter with optional subjects array)
     skills.md         # Skill categories as YAML arrays in frontmatter
+    certifications.md # Certification categories as YAML arrays in frontmatter
 public/images/        # Static images (dp.jpg profile photo)
 .hooks/               # Git hooks (committed to repo)
 .claude/              # Claude Code project config, rules, and skills
@@ -84,5 +85,5 @@ A pre-commit hook in `.hooks/pre-commit` bumps the patch version, runs `tsc --no
 - **Text**: Off-White `#F5F5F5` (`0 0% 96%`)
 - **CSS variables**: Defined in `globals.css` under `.dark` selector
 - **Border**: `0 0% 22%` (brighter for card visibility)
-- **Custom utilities**: `.bg-grid-pattern`, `.text-gradient`, `.card-glow`, `.drop-shadow-glow`, `.resume-bullets`
+- **Custom utilities**: `.bg-grid-pattern`, `.text-gradient`, `.card-glow`, `.drop-shadow-glow`, `.resume-bullets`, `.scrollable-section`
 - **Animations**: `fade-in-up`, `glow-pulse`, `terminal-blink` keyframes

@@ -29,8 +29,9 @@ paths:
 - Below subtitle: one-liner summary, then 2x2 grid of info cards with emoji icons
 - CTA buttons: uniform outlined style, arrow always visible, nudges right on hover
 
-## Portfolio Nav
-- `portfolio-nav.tsx` — Sticky side nav for portfolio page sections
+## Side Nav
+- `side-nav.tsx` — Reusable sticky side nav, used on portfolio and resume pages
+- Accepts `sections: { id: string; label: string }[]` prop
 - Client component with `IntersectionObserver` for scroll-aware active section highlighting
 - Hidden on mobile (`hidden lg:block`), sticky at `top-32`
 - Active section: `border-primary text-primary` left border
