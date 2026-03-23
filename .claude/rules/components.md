@@ -15,6 +15,7 @@ paths:
 - All cards use `hover:border-primary/30` for border highlight
 - Tag/tech pills: `rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary`
 - Link hover color: `hover:text-primary` (not `hover:text-foreground`)
+- `ProjectCard` supports `wip?: boolean` — renders yellow WIP badge; `showTechStack?: boolean` — hides tech pills when false
 
 ## Footer
 - Imports version from `package.json` and displays inline: `$ © 2026 Ian Ho | v0.1.x`
