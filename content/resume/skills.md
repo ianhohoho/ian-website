@@ -5,5 +5,5 @@ categories:
   - name: "ML & AI"
     skills: ["TensorFlow", "MLOps", "LLMs", "Langchain", "RAG", "Airflow", "Vector Databases"]
   - name: "Data & Observability"
-    skills: ["Snowflake", "Kafka", "Datadog (OTEL)"]
+    skills: ["Snowflake", "Kafka", "Datadog (OTEL)"] 
 ---

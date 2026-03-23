@@ -8,23 +8,25 @@ export interface Project {
   liveUrl?: string;
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, showTechStack = true }: { project: Project; showTechStack?: boolean }) {
   return (
     <div className="group rounded-lg border border-border p-6 transition-colors hover:border-primary/30 card-glow">
       <h3 className="text-lg font-semibold">{project.title}</h3>
       <p className="mt-2 text-sm text-muted-foreground">
         {project.description}
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.techStack.map((tech) => (
-          <span
-            key={tech}
-            className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
+      {showTechStack && project.techStack.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.techStack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs text-primary"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
       <div className="mt-4 flex items-center gap-3">
         {project.githubUrl && (
           <a

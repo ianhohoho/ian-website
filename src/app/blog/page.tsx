@@ -16,7 +16,7 @@ export default function BlogPage() {
         <span className="text-primary">$</span> Blog
       </h1>
       <p className="mt-2 text-muted-foreground">
-        Thoughts on data science, machine learning, and engineering.
+        Thoughts on DS/ML/AI, Engineering, Life, Money, Happiness... anything.
       </p>
 
       {posts.length === 0 ? (

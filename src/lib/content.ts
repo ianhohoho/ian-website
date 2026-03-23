@@ -34,6 +34,36 @@ export function getAllProjects(): Project[] {
     .map(({ order: _, ...rest }) => rest);
 }
 
+export interface SideQuest {
+  title: string;
+  description: string;
+  status: "completed" | "abandoned" | "active";
+}
+
+export function getAllSideQuests(): SideQuest[] {
+  const dir = path.join(contentDir, "sidequests");
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
+
+  const quests = files.map((filename) => {
+    const filePath = path.join(dir, filename);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+
+    return {
+      title: data.title as string,
+      description: data.description as string,
+      status: (data.status as SideQuest["status"]) || "completed",
+      order: (data.order as number) || 0,
+    };
+  });
+
+  return quests
+    .sort((a, b) => a.order - b.order)
+    .map(({ order: _, ...rest }) => rest);
+}
+
 export function getAllArticles(): Article[] {
   const dir = path.join(contentDir, "articles");
   if (!fs.existsSync(dir)) return [];
@@ -74,6 +104,7 @@ export interface ResumeEducation {
   startDate: string;
   endDate: string;
   note?: string;
+  subjects?: string[];
 }
 
 export interface SkillCategory {
@@ -81,11 +112,23 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+}
+
+export interface CertificationCategory {
+  name: string;
+  certs: Certification[];
+}
+
 export interface ResumeData {
   summary: string;
   experience: ResumeExperience[];
   education: ResumeEducation[];
   skillCategories: SkillCategory[];
+  certCategories: CertificationCategory[];
 }
 
 export async function getResumeData(): Promise<ResumeData> {
@@ -137,6 +180,7 @@ export async function getResumeData(): Promise<ResumeData> {
       startDate: data.startDate as string,
       endDate: data.endDate as string,
       note: data.note as string | undefined,
+      subjects: data.subjects as string[] | undefined,
       order: (data.order as number) || 0,
     };
   });
@@ -151,10 +195,17 @@ export async function getResumeData(): Promise<ResumeData> {
   const { data: skillsData } = matter(skillsContent);
   const skillCategories = skillsData.categories as SkillCategory[];
 
+  // Certifications
+  const certsPath = path.join(contentDir, "resume/certifications.md");
+  const certsContent = fs.readFileSync(certsPath, "utf8");
+  const { data: certsData } = matter(certsContent);
+  const certCategories = certsData.categories as CertificationCategory[];
+
   return {
     summary: summaryBody.trim(),
     experience,
     education,
     skillCategories,
+    certCategories,
   };
 }

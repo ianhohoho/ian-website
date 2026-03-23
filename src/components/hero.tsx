@@ -63,13 +63,31 @@ export function Hero() {
           />
         </motion.p>
 
+        <motion.p
+          variants={fadeUp}
+          className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base"
+        >
+          Lead Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
+        </motion.p>
+
         <motion.div
           variants={fadeUp}
-          className="mx-auto max-w-xl space-y-6 text-muted-foreground"
+          className="mx-auto grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2"
         >
-          <p>Lead Data Scientist &amp; ML Engineer with experience building production-grade ML systems, AI-powered solutions, and data infrastructure at scale.</p>
-          <p>Passionate about turning complex data problems into high-impact products.</p>
-          <p>Always looking to learn new things.</p>
+          {[
+            { icon: "🏛️", text: "Functional Head of Data & AI @ Singpass, GovTech" },
+            { icon: "🎩", text: "Wears many hats — ML/AI Engineer, Product Manager" },
+            { icon: "🚀", text: "Turning complex data problems into high-impact products" },
+            { icon: "📚", text: "Always looking to learn new things" },
+          ].map((item) => (
+            <div
+              key={item.text}
+              className="flex items-start gap-3 rounded-lg border border-border/50 px-4 py-3 text-left text-sm text-muted-foreground"
+            >
+              <span className="mt-0.5 text-base">{item.icon}</span>
+              <span>{item.text}</span>
+            </div>
+          ))}
         </motion.div>
       </div>
 

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     template: "%s | Ian Ho",
   },
   description:
-    "Personal website of Ian Ho — Lead Data Scientist & ML Engineer. Portfolio, blog, and more.",
-  metadataBase: new URL("https://ianho.dev"),
+    "Personal website of Ian Ho — Lead Data Scientist @ Singpass, GovTech",
+  metadataBase: new URL("https://ianho.xyz"),
 };
 
 export default function RootLayout({
