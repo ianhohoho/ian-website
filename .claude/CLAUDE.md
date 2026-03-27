@@ -39,7 +39,7 @@ src/
     typing-effect.tsx   # Rotating multi-title typing animation with blinking cursor
     project-card.tsx    # Project card with glow hover, styled action buttons, optional showTechStack prop
     article-card.tsx    # Article card with glow hover
-    blog-card.tsx       # Blog post card with glow hover, cyan tag pills
+    blog-card.tsx       # Blog post card with glow hover, tag pills, external link support (Substack badge)
     side-nav.tsx        # Reusable sticky side nav (scroll-aware section highlighting, used on portfolio + resume)
   lib/                # Utilities (blog.ts, content.ts parsers, cn helper)
 content/

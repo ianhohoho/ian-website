@@ -12,6 +12,7 @@ export interface BlogPost {
   date: string;
   description: string;
   tags: string[];
+  externalUrl?: string;
   content: string;
 }
 
@@ -32,6 +33,7 @@ export function getAllPosts(): Omit<BlogPost, "content">[] {
       date: data.date || "",
       description: data.description || "",
       tags: data.tags || [],
+      ...(data.externalUrl && { externalUrl: data.externalUrl }),
     };
   });
 
