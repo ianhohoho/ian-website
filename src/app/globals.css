@@ -66,7 +66,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-sm sm:text-base;
   }
 }
 
@@ -164,10 +164,10 @@
     background: transparent;
   }
   .scrollable-section::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
+    background: hsl(var(--primary) / 0.3);
     border-radius: 4px;
   }
   .scrollable-section::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.5);
+    background: hsl(var(--primary) / 0.6);
   }
 }

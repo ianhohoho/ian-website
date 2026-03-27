@@ -82,7 +82,7 @@ export function Hero() {
           ].map((item) => (
             <div
               key={item.text}
-              className="flex items-start gap-3 rounded-lg border border-border/50 px-4 py-3 text-left text-sm text-muted-foreground"
+              className="flex items-start gap-3 rounded-lg border border-border/50 px-4 py-3 text-left text-sm text-foreground"
             >
               <span className="mt-0.5 text-base">{item.icon}</span>
               <span>{item.text}</span>

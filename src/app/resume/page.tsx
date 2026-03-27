@@ -25,7 +25,7 @@ export default async function ResumePage() {
           className="inline-flex items-center gap-2 rounded-lg border border-primary/30 px-4 py-2 text-sm transition-all hover:border-primary/60 hover:shadow-[0_0_16px_hsl(var(--glow)/0.15)]"
         >
           <ExternalLink className="h-4 w-4" />
-          View LinkedIn
+          LinkedIn
         </a>
       </div>
 
@@ -56,7 +56,7 @@ export default async function ResumePage() {
             ].map((item) => (
               <div
                 key={item.text}
-                className="flex items-start gap-3 rounded-lg border border-border/50 px-4 py-3 text-left text-sm text-muted-foreground"
+                className="flex items-start gap-3 rounded-lg border border-border/50 px-4 py-3 text-left text-sm text-foreground"
               >
                 <span className="mt-0.5 text-base">{item.icon}</span>
                 <span>{item.text}</span>
@@ -174,8 +174,8 @@ export default async function ResumePage() {
                       key={cert.title}
                       className="rounded-lg border border-border p-4 card-glow hover:border-primary/30"
                     >
-                      <p className="text-sm font-medium text-foreground">{cert.title}</p>
-                      <span className="mt-1.5 block text-xs text-muted-foreground">{cert.issuer}</span>
+                      <p className="text-sm font-medium text-muted-foreground">{cert.title}</p>
+                      <span className="mt-1.5 block text-xs text-primary">{cert.issuer}</span>
                     </div>
                   ))}
                 </div>

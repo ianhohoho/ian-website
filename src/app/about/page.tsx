@@ -26,11 +26,11 @@ const funFacts = [
   },
   {
     icon: Zap,
-    text: "I'm a strong believer in having a bias to action — too much planning is unproductive. I like working with people who get things done.",
+    text: "I'm a strong believer in having a bias to action — too much planning is sometimes unproductive. I like working with people who just get things done.",
   },
   {
     icon: GraduationCap,
-    text: "I'm a PPE humanities student by training — that means I can smell your BS/fluff from a mile away. Don't even try.",
+    text: "I'm a PPE humanities student by training — so I'm quite allergic to BS/Fluff'",
   },
 ];
 

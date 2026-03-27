@@ -4,13 +4,13 @@ import packageJson from "../../package.json";
 export function Footer() {
   return (
     <footer className="sticky bottom-0 z-40 border-t border-border/40 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 sm:flex-row sm:justify-between">
-        <p className="text-sm text-muted-foreground">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-4 py-4 sm:flex-row sm:justify-between sm:gap-4 sm:px-6 sm:py-8">
+        <p className="text-xs sm:text-sm text-muted-foreground">
           <span className="text-primary">$</span> &copy; {new Date().getFullYear()} Ian Ho
           <span className="mx-2 text-border">|</span>
           <span className="text-primary">v{packageJson.version}</span>
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <a
             href="https://github.com/ianhohoho"
             target="_blank"
