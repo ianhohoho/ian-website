@@ -6,6 +6,7 @@
   lsof -ti:3000 | xargs kill 2>/dev/null; sleep 1; rm -rf .next && pnpm dev
   ```
 - Run this in the background so the conversation can continue
+- After restarting, open the relevant page in the browser: `open http://localhost:3000/<path>`
 - The user will hard-refresh (`Cmd+Shift+R`) to see changes
 
 ## Before Committing
