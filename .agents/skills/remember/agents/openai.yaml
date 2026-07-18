@@ -1,0 +1,7 @@
+interface:
+  display_name: "Remember Project Knowledge"
+  short_description: "Persist durable project knowledge and conventions"
+  default_prompt: "Use $remember to preserve durable project knowledge from this session."
+
+policy:
+  allow_implicit_invocation: false

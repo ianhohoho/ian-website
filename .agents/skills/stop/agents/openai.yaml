@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stop Dev Server"
+  short_description: "Stop the local Next.js development server"
+  default_prompt: "Use $stop to stop the local development server on port 3000."
+
+policy:
+  allow_implicit_invocation: false

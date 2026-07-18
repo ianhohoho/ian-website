@@ -1,0 +1,7 @@
+interface:
+  display_name: "Reload Dev Server"
+  short_description: "Restart the local Next.js development server"
+  default_prompt: "Use $reload to clear the cache and restart the local development server."
+
+policy:
+  allow_implicit_invocation: false
