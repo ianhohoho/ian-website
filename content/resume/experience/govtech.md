@@ -1,5 +1,5 @@
 ---
-title: "Lead Data Scientist / Head of DS & AI"
+title: "Staff Data Scientist / Head of DS & AI"
 company: "GovTech"
 team: "Singpass"
 startDate: "Jan 2023"

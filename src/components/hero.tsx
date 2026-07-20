@@ -67,7 +67,7 @@ export function Hero() {
           variants={fadeUp}
           className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base"
         >
-          Lead Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
+          Staff Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
         </motion.p>
 
         <motion.div

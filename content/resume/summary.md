@@ -1,7 +1,7 @@
 ---
 title: "Summary"
 ---
-Lead Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
+Staff Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
 
 Currently also Functional Head of Data & AI @ Singpass, GovTech.
 
