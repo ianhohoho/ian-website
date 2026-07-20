@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         <div
-          className="prose prose-invert mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-a:underline prose-strong:text-foreground prose-code:text-primary"
+          className="prose prose-invert mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-a:underline prose-strong:text-foreground prose-code:text-primary [&_blockquote_em_strong]:box-decoration-clone [&_blockquote_em_strong]:rounded-sm [&_blockquote_em_strong]:bg-primary [&_blockquote_em_strong]:px-1 [&_blockquote_em_strong]:py-0.5 [&_blockquote_em_strong]:text-primary-foreground"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
