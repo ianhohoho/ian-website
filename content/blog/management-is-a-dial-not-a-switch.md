@@ -1,5 +1,5 @@
 ---
-title: "Management Is a Dial, Not a Switch"
+title: "Leadership Lessons: On Context & Control"
 date: "2026-07-20"
 description: "What I have learned about context, ownership, and finding the right distance from the work."
 tags: ["leadership", "management", "teams"]
