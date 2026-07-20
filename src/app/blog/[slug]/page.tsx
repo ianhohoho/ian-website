@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 
 interface Props {
@@ -41,7 +42,15 @@ export default async function BlogPostPage({ params }: Props) {
 
       <article className="mt-8">
         <header>
-          <time className="text-sm text-muted-foreground">{post.date}</time>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <time>{post.date}</time>
+            {post.readingTimeMinutes && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{post.readingTimeMinutes} min read</span>
+              </>
+            )}
+          </div>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             {post.title}
           </h1>
@@ -56,6 +65,24 @@ export default async function BlogPostPage({ params }: Props) {
                 </span>
               ))}
             </div>
+          )}
+          {post.coverImage && (
+            <figure className="mt-8">
+              <Image
+                src={post.coverImage}
+                alt={post.coverImageAlt || ""}
+                width={1536}
+                height={1024}
+                priority
+                sizes="(min-width: 768px) 720px, calc(100vw - 3rem)"
+                className="aspect-[3/2] w-full rounded-lg border border-border object-cover"
+              />
+              {post.coverImageCredit && (
+                <figcaption className="mt-2 text-xs text-muted-foreground">
+                  {post.coverImageCredit}
+                </figcaption>
+              )}
+            </figure>
           )}
         </header>
 

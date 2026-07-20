@@ -5,6 +5,23 @@ import { remark } from "remark";
 import html from "remark-html";
 
 const blogDir = path.join(process.cwd(), "content/blog");
+const WORDS_PER_MINUTE = 200;
+
+function estimateReadingTime(content: string): number {
+  const plainText = content
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[#>*_~\-]/g, " ");
+
+  const wordCount = plainText
+    .split(/\s+/)
+    .filter((word) => /[A-Za-z0-9]/.test(word)).length;
+
+  return Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE));
+}
 
 export interface BlogPost {
   slug: string;
@@ -13,6 +30,10 @@ export interface BlogPost {
   description: string;
   tags: string[];
   externalUrl?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+  coverImageCredit?: string;
+  readingTimeMinutes?: number;
   content: string;
 }
 
@@ -58,6 +79,11 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     date: data.date || "",
     description: data.description || "",
     tags: data.tags || [],
+    ...(data.externalUrl && { externalUrl: data.externalUrl }),
+    ...(data.coverImage && { coverImage: data.coverImage }),
+    ...(data.coverImageAlt && { coverImageAlt: data.coverImageAlt }),
+    ...(data.coverImageCredit && { coverImageCredit: data.coverImageCredit }),
+    ...(!data.externalUrl && { readingTimeMinutes: estimateReadingTime(content) }),
     content: processedContent.toString(),
   };
 }
