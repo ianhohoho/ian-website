@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { AnalyticsAsset } from "@/components/analytics-asset";
 import { SideNav } from "@/components/side-nav";
 import { getAllProjects, getAllArticles, getAllSideQuests } from "@/lib/content";
 
@@ -36,7 +37,12 @@ export default function PortfolioPage() {
             <div className="scrollable-section mt-6 max-h-[600px] space-y-6 overflow-y-auto pr-2">
               {projects.map((project, i) => (
                 <AnimateIn key={project.title} delay={i * 0.1}>
-                  <div className="group overflow-hidden rounded-lg border border-border card-glow hover:border-primary/30">
+                  <AnalyticsAsset
+                    assetType="project"
+                    assetName={project.title}
+                    assetId={project.title.toLowerCase().replace(/\s+/g, "-")}
+                  >
+                    <div className="group overflow-hidden rounded-lg border border-border card-glow hover:border-primary/30">
                     {/* Terminal header */}
                     <div className="flex items-center justify-between border-b border-border bg-muted/50 px-4 py-2.5">
                       <div className="flex items-center gap-2">
@@ -100,7 +106,8 @@ export default function PortfolioPage() {
                         )}
                       </div>
                     </div>
-                  </div>
+                    </div>
+                  </AnalyticsAsset>
                 </AnimateIn>
               ))}
             </div>
@@ -112,25 +119,31 @@ export default function PortfolioPage() {
             <div className="mt-6 divide-y divide-border rounded-lg border border-border">
               {articles.map((article, i) => (
                 <AnimateIn key={article.title} delay={i * 0.05}>
-                  <a
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-muted/30"
+                  <AnalyticsAsset
+                    assetType="article"
+                    assetName={article.title}
+                    assetId={article.title.toLowerCase().replace(/\s+/g, "-")}
                   >
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-primary/30 text-xs font-bold text-primary">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium group-hover:text-primary transition-colors">
-                        {article.title}
-                      </p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">
-                        {article.publication} &middot; {article.date}
-                      </p>
-                    </div>
-                    <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-all group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
+                    <a
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-muted/30"
+                    >
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-primary/30 text-xs font-bold text-primary">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-medium group-hover:text-primary transition-colors">
+                          {article.title}
+                        </p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">
+                          {article.publication} &middot; {article.date}
+                        </p>
+                      </div>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-all group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  </AnalyticsAsset>
                 </AnimateIn>
               ))}
             </div>
@@ -145,7 +158,12 @@ export default function PortfolioPage() {
             <div className="relative mt-8 ml-4 border-l border-primary/30 pl-8">
               {sideQuests.map((quest, i) => (
                 <AnimateIn key={`${quest.title}-${i}`} delay={i * 0.1}>
-                  <div className="relative mb-8 last:mb-0">
+                  <AnalyticsAsset
+                    assetType="side_quest"
+                    assetName={quest.title}
+                    assetId={quest.title.toLowerCase().replace(/\s+/g, "-")}
+                    className="relative mb-8 last:mb-0"
+                  >
                     {/* Timeline node */}
                     <div className="absolute -left-[2.85rem] top-1 flex h-6 w-6 items-center justify-center rounded-full border border-primary/40 bg-background text-primary">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
@@ -162,7 +180,7 @@ export default function PortfolioPage() {
                         {quest.description}
                       </p>
                     </div>
-                  </div>
+                  </AnalyticsAsset>
                 </AnimateIn>
               ))}
             </div>

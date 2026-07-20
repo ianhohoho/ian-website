@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { BlogCard } from "@/components/blog-card";
 import { AnimateIn } from "@/components/animate-in";
+import { AnalyticsAsset } from "@/components/analytics-asset";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -27,7 +28,13 @@ export default function BlogPage() {
         <div className="mt-10 space-y-4">
           {posts.map((post, i) => (
             <AnimateIn key={post.slug} delay={i * 0.1}>
-              <BlogCard post={post} />
+              <AnalyticsAsset
+                assetType="blog"
+                assetName={post.title}
+                assetId={post.slug}
+              >
+                <BlogCard post={post} />
+              </AnalyticsAsset>
             </AnimateIn>
           ))}
         </div>
