@@ -16,6 +16,7 @@
 - Blog (`blog/page.tsx`): use staggered BlogCard entries.
 - Blog post (`blog/[slug]/page.tsx`): keep cyan prose links and code.
 - Contact (`contact/page.tsx`): use staggered icon contact cards with glow hover.
+- Analytics (`analytics/page.tsx`): keep the route unlinked and `force-dynamic`. Require the signed analytics cookie before querying PostHog, retain 7/30/90-day filters, show known pages and assets even when their counts are zero, and never expose server credentials in rendered output. Keep authentication server actions in `analytics/actions.ts`.
 - 404 (`not-found.tsx`): apply `.text-gradient` to `404` and retain the terminal-style subtitle.
 
 ## Layout

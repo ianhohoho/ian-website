@@ -2,7 +2,7 @@
 
 ## Overview
 
-Personal portfolio and blog for a data scientist. The site is frontend-only, hosted on Vercel, and automatically deployed when changes reach `main`.
+Personal portfolio and blog for a data scientist. Most public content is statically generated; a password-protected server route provides private PostHog analytics. The site is hosted on Vercel and automatically deployed when changes reach `main`.
 
 ## Tech Stack
 
@@ -10,6 +10,7 @@ Personal portfolio and blog for a data scientist. The site is frontend-only, hos
 - Language: TypeScript in strict mode
 - Styling: Tailwind CSS 3 with shadcn/ui-style CSS variable tokens
 - Animation: Motion, imported from `motion/react`
+- Analytics: PostHog through `posthog-js` plus server-side HogQL queries
 - Content: Markdown under `content/`, parsed with `gray-matter`, `remark`, and `remark-html`
 - Icons: Lucide React
 - Font: JetBrains Mono through `next/font/google`
@@ -31,10 +32,12 @@ src/
     blog/page.tsx         # Blog listing
     blog/[slug]/page.tsx  # Blog post
     contact/page.tsx      # Contact page
+    analytics/page.tsx    # Private, dynamic PostHog dashboard
     icon.svg              # Favicon
     not-found.tsx         # Custom 404
   components/             # Shared UI components
   lib/                    # Content parsers and utilities
+  instrumentation-client.ts # PostHog browser initialization
 content/
   blog/                   # Blog posts
   projects/               # Project entries
@@ -62,6 +65,8 @@ More specific instructions are inherited from:
 The pre-commit hook in `.hooks/pre-commit` bumps the patch version, stages that version change, runs the type-check, and builds the production bundle. Never skip the hook with `--no-verify`, and do not bump the version manually.
 
 GitHub Actions runs the same type-check and build. A push to `main` triggers Vercel deployment. If a push is rejected because `main` advanced, run `git pull --rebase origin main` before pushing again.
+
+PostHog adds a transitive `core-js` install script. Keep `core-js: true` in `pnpm-workspace.yaml` so pnpm's build-script policy and the pre-commit hook can install dependencies non-interactively.
 
 ## Workflow
 
@@ -114,3 +119,15 @@ GitHub Actions runs the same type-check and build. A push to `main` triggers Ver
 - Statically generate post routes with `generateStaticParams`.
 - Render post content with `prose prose-invert`, `prose-a:text-primary`, and `prose-code:text-primary`.
 - Use the standard cyan pill treatment for tags and `hover:text-primary` for the back link.
+
+## Analytics
+
+- Keep `/analytics` unlinked, password-protected, dynamically rendered, and marked `noindex`, `nofollow`, `noarchive`, and `nosnippet`.
+- Required local and Vercel Production variables are `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN`, `NEXT_PUBLIC_POSTHOG_HOST`, `POSTHOG_PROJECT_ID`, `POSTHOG_PERSONAL_API_KEY`, `POSTHOG_API_HOST`, and `ANALYTICS_PASSWORD`. Document them with empty values in `.env.example`; never commit real values.
+- Only the token and ingest host use `NEXT_PUBLIC_`. Keep the personal API key, project ID, API host, and dashboard password server-only.
+- Rotating `ANALYTICS_PASSWORD` invalidates existing signed dashboard sessions. Store the resulting cookie as signed, HTTP-only, `sameSite=lax`, and secure in production.
+- Browser analytics live in `src/instrumentation-client.ts`. Honor Do Not Track, exclude `/analytics`, keep session recording and autocapture disabled, and use local-storage persistence with anonymous profiles.
+- Capture `$pageview` automatically. Custom events are `page_engagement` (`path`, `duration_seconds`), `asset_viewed` (`asset_type`, `asset_name`, `asset_id`, `active_seconds`), and `asset_opened` (asset fields plus link metadata).
+- Send unload-time duration and visibility events with `transport: "sendBeacon"` and `send_instantly: true`; ordinary batched delivery can lose page-exit events.
+- Server-side dashboard queries live in `src/lib/posthog-analytics.ts`, use rolling 7/30/90-day windows, exclude `/analytics`, and issue requests with Next.js `cache: "no-store"`.
+- PostHog's `/query` API caches results by default and caches different range queries independently. Immediately after new event ingestion, two ranges can briefly show different snapshots even when all events fit both windows; a later request converges. Use PostHog's documented `refresh` modes if strict fresh-on-every-click behavior becomes necessary, while considering query limits.

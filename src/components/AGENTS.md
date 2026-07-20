@@ -13,6 +13,12 @@
 - Use `hover:text-primary` for card links.
 - `ProjectCard` supports `wip?: boolean` for a yellow WIP badge and `showTechStack?: boolean` to hide technology pills.
 
+## Analytics Components
+
+- Mount `AnalyticsPageTracker` once from the root layout. It measures foreground time per pathname and must skip `/analytics`.
+- Wrap every trackable blog, article, project, and side-quest card in `AnalyticsAsset` with a stable type, name, and ID. Count a view only after at least 50% visibility and one second of foreground time.
+- Keep `TrafficChart` dependency-free, accessible as an SVG image, and driven by the filled daily series returned by the server analytics layer.
+
 ## Footer
 
 - Import the version from `package.json` and display `$ © 2026 Ian Ho | v{version}` inline.
