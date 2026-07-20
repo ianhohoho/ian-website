@@ -2,7 +2,10 @@
 title: "Leadership Lessons: On Context & Control"
 date: "2026-07-20"
 description: "What I have learned about context, ownership, and finding the right distance from the work."
-tags: ["leadership", "management", "teams"]
+tags: ["leadership"]
+coverImage: "/images/leadership-lessons-context-control.png"
+coverImageAlt: "A sailing crew sharing a glowing navigation chart while steering together toward a blue light on the horizon."
+coverImageCredit: "Created with OpenAI image generation."
 ---
 
 I took on my first leadership roles about two years ago, but I didn't really have anyone around me who could teach me how to be a manager.
