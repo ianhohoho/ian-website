@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Clock3, Database, Eye, LockKeyhole, LogOut, Users } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { AnalyticsRangeLink } from "@/components/analytics-range-link";
 import { TrafficChart } from "@/components/traffic-chart";
 import { getAllPosts } from "@/lib/blog";
 import { getAllArticles, getAllProjects, getAllSideQuests } from "@/lib/content";
@@ -291,17 +291,11 @@ function Dashboard({ data, range }: { data: AnalyticsData; range: AnalyticsRange
 
       <nav aria-label="Analytics date range" className="mt-8 flex gap-2">
         {ANALYTICS_RANGES.map((days) => (
-          <Link
+          <AnalyticsRangeLink
             key={days}
-            href={`/analytics?range=${days}`}
-            className={`rounded-full border px-4 py-2 text-xs transition-colors ${
-              range === days
-                ? "border-primary/40 bg-primary/10 text-primary"
-                : "border-border text-muted-foreground hover:border-primary/30 hover:text-primary"
-            }`}
-          >
-            {days} days
-          </Link>
+            days={days}
+            active={range === days}
+          />
         ))}
       </nav>
 

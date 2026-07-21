@@ -80,6 +80,7 @@ async function queryPostHog(query: string, name: string) {
     body: JSON.stringify({
       query: { kind: "HogQLQuery", query },
       name,
+      refresh: "force_blocking",
     }),
     cache: "no-store",
   });
