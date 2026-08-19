@@ -3,8 +3,8 @@ title: "Staff Data Scientist / Head of DS & AI"
 company: "GovTech"
 team: "Singpass"
 startDate: "Jan 2023"
-endDate: "Present"
-order: 1
+endDate: "Jul 2026"
+order: 2
 ---
 - Founding Data Scientist - scaled two cross-functional DS/ML/AI & Engineering teams in Singpass (Trust & Safety, Data Platform)
     - Built & scaled Singpass Trust & Safety from 0 → 1: the full ML life cycle + data engineering + analytics & simulations

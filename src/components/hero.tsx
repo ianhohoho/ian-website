@@ -56,6 +56,7 @@ export function Hero() {
         >
           <TypingEffect
             texts={[
+              "AI Deployment Engineer",
               "Data Scientist",
               "ML Engineer",
               "AI Engineer",
@@ -67,7 +68,7 @@ export function Hero() {
           variants={fadeUp}
           className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base"
         >
-          Staff Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
+          AI Deployment Engineer at OpenAI with experience building production-grade ML systems, AI-powered solutions, and data infrastructure at scale.
         </motion.p>
 
         <motion.div
@@ -75,8 +76,8 @@ export function Hero() {
           className="mx-auto grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2"
         >
           {[
-            { icon: "🏛️", text: "Functional Head of Data & AI @ Singpass, GovTech" },
-            { icon: "🎩", text: "Wears many hats — ML/AI Engineer, Product Manager" },
+            { icon: "🤖", text: "AI Deployment Engineer @ OpenAI" },
+            { icon: "🎩", text: "Former Staff Data Scientist, wearing many hats — ML/AI Engineer, Product Manager" },
             { icon: "🚀", text: "Turning complex data problems into high-impact products" },
             { icon: "📚", text: "Always looking to learn new things" },
           ].map((item) => (

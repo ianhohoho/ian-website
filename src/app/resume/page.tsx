@@ -49,8 +49,8 @@ export default async function ResumePage() {
           </p>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {[
-              { icon: "🏛️", text: "Functional Head of Data & AI @ Singpass, GovTech" },
-              { icon: "🎩", text: "Wears many hats — ML/AI Engineer, Product Manager" },
+              { icon: "🤖", text: "AI Deployment Engineer @ OpenAI" },
+              { icon: "🎩", text: "Former Staff Data Scientist, wearing many hats — ML/AI Engineer, Product Manager" },
               { icon: "🚀", text: "Turning complex data problems into high-impact products" },
               { icon: "📚", text: "Always looking to learn new things" },
             ].map((item) => (
@@ -86,10 +86,12 @@ export default async function ResumePage() {
                   {role.company}
                   {role.team && <> &mdash; {role.team}</>}
                 </p>
-                <div
-                  className="resume-bullets mt-3 text-sm text-foreground"
-                  dangerouslySetInnerHTML={{ __html: role.bulletsHtml }}
-                />
+                {role.bulletsHtml.trim() && (
+                  <div
+                    className="resume-bullets mt-3 text-sm text-foreground"
+                    dangerouslySetInnerHTML={{ __html: role.bulletsHtml }}
+                  />
+                )}
               </div>
             ))}
           </div>

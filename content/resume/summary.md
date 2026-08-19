@@ -1,9 +1,9 @@
 ---
 title: "Summary"
 ---
-Staff Data Scientist with experience building production-grade ML systems, AI-powered solutions, and Data Infrastructure at scale.
+AI Deployment Engineer at OpenAI with experience building production-grade ML systems, AI-powered solutions, and data infrastructure at scale.
 
-Currently also Functional Head of Data & AI @ Singpass, GovTech.
+Previously Functional Head of Data & AI @ Singpass, GovTech.
 
 Wears many hats, including ML/AI Engineer, Product Manager.
 
